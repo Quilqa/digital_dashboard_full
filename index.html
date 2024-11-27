@@ -180,7 +180,7 @@
            <div id="login-form">
         	<h2>Введите пароль</h2>
         	<div class="password-container">
-                    <input type="password" id="password" placeholder="Пароль">
+                    <input type="password" id="password" placeholder="Пароль" onkeydown="handleEnter(event)">
                     <span class="toggle-password" onclick="togglePassword()">
                             <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: block;">
                         <path d="M12 4.5C7.305 4.5 3.358 7.138 1.5 11.25a12.35 12.35 0 0 0 21 0c-1.858-4.112-5.805-6.75-10.5-6.75Zm0 13.5A4.5 4.5 0 1 1 12 9a4.5 4.5 0 0 1 0 9Zm0-7.5A3 3 0 1 0 12 15a3 3 0 0 0 0-6Z"/>
@@ -427,7 +427,7 @@
 
             function checkPassword() {
                 const password = document.getElementById("password").value;
-                const PASSWORD = "Telecom_dashboard2024!"; // Ваш установленный пароль
+                const PASSWORD = "Telecom_dashboard2024!"; 
                 if (password === PASSWORD) {
                     document.getElementById("login-form").style.display = "none";
                     document.getElementById("protected-content").style.display = "block";
