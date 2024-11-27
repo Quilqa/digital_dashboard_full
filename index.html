@@ -119,22 +119,6 @@
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		text-align: center;
             }
-	    .password-container {
-                position: relative;
-                display: inline-block;
-            }
-            .password-container input[type="password"],
-            .password-container input[type="text"] {
-                padding-right: 30px;
-                font-size: 18px;
-            }
-            .toggle-password {
-                position: absolute;
-                top: 50%;
-                right: 10px;
-                transform: translateY(-50%);
-                cursor: pointer;
-            }
             #login-form h2 {
                 margin-bottom: 20px;
                 font-size: 24px; /* Увеличенный шрифт */
@@ -162,15 +146,34 @@
 	    #login-form button:hover {
 		background: #0056b3;
 	    }
+            .password-container {
+                position: relative;
+                display: inline-block;
+            }
+            .password-container input[type="password"],
+            .password-container input[type="text"] {
+                padding-right: 30px;
+                font-size: 18px;
+            }
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
     
              </style>
        </head>
        <body>
            <div id="login-form">
                 <h2>Введите пароль</h2>
-		<input type="password" id="password" placeholder="Пароль" onkeydown="handleEnter(event)">
-		<button onclick="checkPassword()">Войти</button>
-	    </div>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Пароль">
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+                <button onclick="checkPassword()">Войти</button>
+            </div>
 	<div id="protected-content">
           <div class="container">
             <div class="cont">
@@ -397,7 +400,7 @@
                     toggleIcon.textContent = "🙈"; // Меняем иконку
                 } else {
                     passwordInput.type = "password";
-                    toggleIcon.textContent = "👁️";
+                    toggleIcon.textContent = "👁";
                 }
             }
 
