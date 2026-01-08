@@ -196,7 +196,7 @@
           <div class="container">
             <div class="cont">
                 <label for="periodSlider">Period: <span id="sliderValue">202401</span><span id="dateLabel"></span> (Updated 2026-01-08)</label>
-                <input type="range" min="0" max="35" value="13" class="slider" id="periodSlider">
+                <input type="range" min="0" max="47" value="13" class="slider" id="periodSlider">
             </div>
              <div id="dataDisplay"></div>
           </div>
@@ -353,7 +353,7 @@
                 var dataDisplay = document.getElementById('dataDisplay');
 
                 var validPeriods = [];
-                for (var year = 2023; year <= 2025; year++) {
+                for (var year = 2023; year <= 2026; year++) {
                     for (var month = 1; month <= 12; month++) {
                         if (year * 100 + month < parseInt(nowPeriod)+1) {
                             validPeriods.push(year * 100 + month);
